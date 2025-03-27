@@ -22,7 +22,7 @@ public class Health : MonoBehaviour
         anim = GetComponent<Animator>();
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         isPlayer = CompareTag("Player");
-        if (!isPlayer){enemy_bar.SetHealth(StartingHealth,startingHealth);        Debug.Log(enemy_bar);
+        if (!isPlayer){enemy_bar.SetHealth(StartingHealth,startingHealth);       
 }
     }
 

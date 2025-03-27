@@ -103,4 +103,15 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("Finished level!!");
         map.SetActive(true);
     }
+    public void Disable(){
+        enabled = false;
+        PlayerAttack playerAttack = this.gameObject.GetComponent<PlayerAttack>();
+        playerAttack.enabled = false;
+    }
+    public void Enable(){
+        enabled = true;
+        PlayerAttack playerAttack = this.gameObject.GetComponent<PlayerAttack>();
+        playerAttack.enabled = true;
+        
+    }
 }

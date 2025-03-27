@@ -21,6 +21,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Enable();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
@@ -28,6 +29,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Disable();
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
