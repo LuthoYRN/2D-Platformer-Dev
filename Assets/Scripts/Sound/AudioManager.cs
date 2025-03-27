@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager Instance { get; private set; }
+
     [Header("-------- Audio Source --------")]
-    [SerializeField]private AudioSource musicSource;
-    [SerializeField]private AudioSource sfxSource;
-    
+    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioSource sfxSource;
+
     [Header("-------- Audio Clip --------")]
     public AudioClip background;
     public AudioClip death;
@@ -29,12 +31,56 @@ public class AudioManager : MonoBehaviour
     public AudioClip mushroom_range;
     public AudioClip demon_attack;
     public AudioClip demon_death;
-    private void Start(){
+    private float volume = 1f;
+    private const string VolumeKey = "Volume"; // Key for PlayerPrefs
+
+    private void Awake()
+    {
+        // Singleton pattern to persist AudioManager across scenes
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        LoadVolume();
+    }
+   
+  
+
+    private void Start()
+    {
         musicSource.clip = background;
         musicSource.Play();
+        ApplyVolume();
     }
 
-    public void PlaySFX(AudioClip clip){
+    private void ApplyVolume()
+    {
+        musicSource.volume = volume;
+        sfxSource.volume = volume;
+    }
+
+    public void PlaySFX(AudioClip clip)
+    {
         sfxSource.PlayOneShot(clip);
+    }
+
+    public void UpdateVolume(float newVolume)
+    {
+        volume = newVolume;
+        PlayerPrefs.SetFloat(VolumeKey, volume);
+        PlayerPrefs.Save();
+        ApplyVolume();
+    }
+
+    private void LoadVolume()
+    {
+        volume = PlayerPrefs.GetFloat(VolumeKey, 1f);
     }
 }
