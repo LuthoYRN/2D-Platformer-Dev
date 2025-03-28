@@ -18,6 +18,7 @@ TagManager:
   - FireWormAttack
   - Start
   - End
+  - checkpoint
   layers:
   - Default
   - TransparentFX

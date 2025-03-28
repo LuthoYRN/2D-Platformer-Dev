@@ -328,3 +328,4 @@ MonoBehaviour:
   mushroom_range: {fileID: 8300000, guid: 7bcaf6e8240c830459880f2ba355503e, type: 3}
   demon_attack: {fileID: 8300000, guid: 1e70e37e7aacf0c4a8a06478f0c5d661, type: 3}
   demon_death: {fileID: 8300000, guid: fd330ab2d1a62da45b1d1c5b813ba53d, type: 3}
+  checkpoint: {fileID: 8300000, guid: 9b606bf36b26f7944b77c2c2b80606f8, type: 3}

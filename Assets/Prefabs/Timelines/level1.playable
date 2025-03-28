@@ -223,8 +223,6 @@ MonoBehaviour:
     m_Objects:
     - {fileID: 5606956786792256262}
     - {fileID: 7422486979852138760}
-    - {fileID: 8061124906277210146}
-    - {fileID: 1752499230817118925}
 --- !u!74 &-5265829295924502545
 AnimationClip:
   m_ObjectHideFlags: 0
