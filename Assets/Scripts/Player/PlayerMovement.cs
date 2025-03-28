@@ -93,7 +93,20 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.CompareTag("End"))
         {
-            endLevel();
+            bool anyEnemyAlive = false;
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject enemy in enemies)
+            {       
+                if (enemy.activeInHierarchy)
+                    anyEnemyAlive = true;
+                    break;
+            }
+            if (anyEnemyAlive){
+                Debug.Log("Clear all enemies first!");
+            }
+            else{
+                endLevel();
+            }
         }
     }
 
