@@ -42,8 +42,10 @@ public class Health : MonoBehaviour
         {
             if (!dead)
             {
-                anim.SetBool("jump",false);
-                anim.SetBool("fall",false);
+                if(isPlayer){
+                    anim.SetBool("jump",false);
+                    anim.SetBool("fall",false);
+                }
                 anim.SetTrigger("die");              
                 if (isPlayer)
                 {
@@ -70,7 +72,15 @@ public class Health : MonoBehaviour
         anim.ResetTrigger("die");
         anim.Play("idle");
         WeaponWheelController.weaponID = 1;
-        if (GetComponent<PlayerMovement>()!=null)GetComponent<PlayerMovement>().enabled = true;    
+        if (GetComponent<PlayerMovement>()!=null)GetComponent<PlayerMovement>().enabled = true;
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {       
+            if (enemy.activeInHierarchy){
+                Health enemyHealth = enemy.GetComponent<Health>();
+                enemyHealth.AddHealth(enemyHealth.startingHealth);
+            }
+        } 
     }
     private void PlayDeathEffect()
     {
@@ -90,6 +100,9 @@ public class Health : MonoBehaviour
     }
     public void AddHealth(float _value){
         currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
-        if(isPlayer) bar.fillAmount = bar.Map(currentHealth,0,startingHealth,0,1);
+        if(isPlayer) {bar.fillAmount = bar.Map(currentHealth,0,startingHealth,0,1);}
+        else{
+            enemy_bar.SetHealth(_value,_value);
+        }
     }
 }
