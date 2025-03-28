@@ -42,7 +42,9 @@ public class Health : MonoBehaviour
         {
             if (!dead)
             {
-                anim.SetTrigger("die");
+                anim.SetBool("jump",false);
+                anim.SetBool("fall",false);
+                anim.SetTrigger("die");              
                 if (isPlayer)
                 {
                     //player
@@ -62,6 +64,14 @@ public class Health : MonoBehaviour
         }
     }
 
+    public void Respawn(){
+        dead = false;
+        AddHealth((float)startingHealth/2);
+        anim.ResetTrigger("die");
+        anim.Play("idle");
+        WeaponWheelController.weaponID = 1;
+        if (GetComponent<PlayerMovement>()!=null)GetComponent<PlayerMovement>().enabled = true;    
+    }
     private void PlayDeathEffect()
     {
         string enemyName = GetComponent<EnemyTag>().GetEnemyName();
