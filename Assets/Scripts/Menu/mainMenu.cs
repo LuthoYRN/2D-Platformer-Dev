@@ -6,6 +6,9 @@ public class mainMenu : MonoBehaviour
 
     public GameObject mainMenuPanel;
     public GameObject mapPanel;
+    public GameObject optionsPanel;
+    public VolumeSlider volumeSlider;
+    public AudioManager audioManager;
     public GameObject[] mapPieces;
     public void playGame ()
     {
@@ -42,6 +45,21 @@ public class mainMenu : MonoBehaviour
         mapPieces[lastCompletedLevel].SetActive(true);
     }
 
+    public void OpenOptionsMenu()
+    {
+        optionsPanel.SetActive(true); 
+        mainMenuPanel.SetActive(false);
+        audioManager.PauseMusic();
+        volumeSlider.OnOptionsMenuOpened(); 
+    }
+
+    public void CloseOptionsMenu()
+    {
+        optionsPanel.SetActive(false); 
+        mainMenuPanel.SetActive(true);
+        audioManager.ResumeMusic();
+        volumeSlider.OnOptionsMenuClosed(); 
+    }
 
 
 }

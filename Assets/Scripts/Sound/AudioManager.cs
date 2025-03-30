@@ -45,9 +45,11 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
+            Debug.LogWarning("Duplicate AudioManager detected and destroyed!");
             Destroy(gameObject);
             return;
         }
+
         musicSource.clip = background;
         musicSource.Play();
         ApplyVolume();
@@ -77,16 +79,18 @@ public class AudioManager : MonoBehaviour
     private void LoadVolume()
     {
         volume = PlayerPrefs.GetFloat(VolumeKey, 1f);
-        ApplyVolume(); // Make sure the loaded volume is applied immediately
+        ApplyVolume(); 
     }
 
     public void PauseMusic()
     {
+        Debug.Log("Pausing music at time: " + musicSource.time);
         musicSource.Pause();
     }
 
     public void ResumeMusic()
     {
+        Debug.Log("Resuming music at time: " + musicSource.time);
         musicSource.UnPause();
     }
 
