@@ -48,20 +48,28 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("run", Mathf.Abs(horizontalInput));
 
         // Fall detection (only trigger falling when moving downward)
-        if (body.linearVelocityY < -0.1f && !IsGrounded())
+        if (IsGrounded())
         {
-            anim.SetBool("fall", true);
             anim.SetBool("jump", false);
+            anim.SetBool("fall", false);
         }
         else if (body.linearVelocityY > 0.1f)
         {
             anim.SetBool("jump", true);
             anim.SetBool("fall", false);
-        }else if (IsGrounded())
-        {
-            anim.SetBool("fall",false);
-            anim.SetBool("jump",false);
         }
+        else if (body.linearVelocityY < -0.1f)
+        {
+            anim.SetBool("jump", false);
+            anim.SetBool("fall", true);
+        }
+        else
+        {
+            // At peak or hit ceiling
+            anim.SetBool("jump", false);
+            anim.SetBool("fall", true);
+        }
+
     }
 
     void FixedUpdate()
