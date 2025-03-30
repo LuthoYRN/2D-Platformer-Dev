@@ -31,6 +31,15 @@ public class Health : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
         if (isPlayer){bar.fillAmount = bar.Map(currentHealth,0,startingHealth,0,1);}
         else{
+            if(GetComponent<EnemyTag>().GetEnemyName()=="Frost_Guardian" || GetComponent<EnemyTag>().GetEnemyName()=="Demon_Slime"){
+                MeleeEnemy boss = GetComponent<MeleeEnemy>();
+                if (boss != null && !boss.isVulnerable)
+                {
+                    Debug.Log("Boss is invulnerable!");
+                    currentHealth = Mathf.Clamp(currentHealth + _damage, 0, startingHealth);
+                    return;
+                }
+            }
             enemy_bar.SetHealth(currentHealth,startingHealth);
         }
         if (currentHealth > 0)
