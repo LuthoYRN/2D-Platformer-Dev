@@ -7,12 +7,11 @@ public class mainMenu : MonoBehaviour
     public GameObject mainMenuPanel;
     public GameObject mapPanel;
     public GameObject[] mapPieces;
-    // Simulate player's progress - GET FROM SAVE FILE!!!!!!!
-    public int levelsCompleted = 0;
     public void playGame ()
     {
+        int lastCompletedLevel = PlayerPrefs.GetInt("LastCompletedLevel", 0);
         Debug.Log("Play button pressed");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Make sure to update this to say +1 whenever a level is finished!!!!!!
+        SceneManager.LoadScene(lastCompletedLevel + 1); //Make sure to update this to say +1 whenever a level is finished!!!!!!
     }
 
     public void exitGame()
@@ -30,15 +29,17 @@ public class mainMenu : MonoBehaviour
 
     public void CloseMap()
     {
+        int lastCompletedLevel = PlayerPrefs.GetInt("LastCompletedLevel", 0);
         mapPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
-        mapPieces[levelsCompleted].SetActive(false);
+        mapPieces[lastCompletedLevel].SetActive(false);
     }
 
     void UpdateMap()
     {
-        Debug.Log("Levels completed: " + levelsCompleted);
-        mapPieces[levelsCompleted].SetActive(true);
+        int lastCompletedLevel = PlayerPrefs.GetInt("LastCompletedLevel", 0);
+        Debug.Log("Levels completed: " + lastCompletedLevel);
+        mapPieces[lastCompletedLevel].SetActive(true);
     }
 
 }
