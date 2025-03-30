@@ -63,7 +63,7 @@ public class AudioManager : MonoBehaviour
     private void ApplyVolume()
     {
         musicSource.volume = volume;
-        sfxSource.volume = volume;
+        //sfxSource.volume = volume;
     }
 
     public void PlaySFX(AudioClip clip)
