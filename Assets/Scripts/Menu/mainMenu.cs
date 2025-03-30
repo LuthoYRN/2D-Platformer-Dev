@@ -40,4 +40,5 @@ public class mainMenu : MonoBehaviour
         Debug.Log("Levels completed: " + levelsCompleted);
         mapPieces[levelsCompleted].SetActive(true);
     }
+
 }
