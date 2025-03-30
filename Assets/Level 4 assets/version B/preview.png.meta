@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 91c8bbea59f708a47a9c11adcf32d79d
+guid: f916df0011c8cdd41a744ee3ab2e3ab9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3726528445313663683
-    second: lava-background_0
+      213: -7730486409907412771
+    second: preview_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lava-background_0
+      name: preview_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 384
+        width: 320
         height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3db0bb7f16b84cc0800000000000000
-      internalID: -3726528445313663683
+      spriteID: dd0eb7c619bc7b490800000000000000
+      internalID: -7730486409907412771
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      lava-background_0: -3726528445313663683
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
