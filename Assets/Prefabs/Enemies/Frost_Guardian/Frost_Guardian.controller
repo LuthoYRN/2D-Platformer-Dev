@@ -769,13 +769,6 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.31
-    functionName: SetBossVulnerable
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
 --- !u!74 &8573181618492351389
 AnimationClip:
   m_ObjectHideFlags: 1

@@ -21,17 +21,11 @@ public class MeleeEnemy : MonoBehaviour
     private EnemyPatrol enemyPatrol;
     private AudioManager audioManager;
     private string enemyName;
-    public bool isVulnerable { get; private set; }
-    private SpriteRenderer sprite;
-    private Color originalColor;
-
     private void Awake(){
         anim = GetComponent<Animator>();
         enemyPatrol = GetComponentInParent<EnemyPatrol>();
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         enemyName = GetComponent<EnemyTag>().GetEnemyName();
-        sprite = GetComponent<SpriteRenderer>();
-        originalColor = sprite.color;
     }
 
     private void Update()
@@ -53,25 +47,9 @@ public class MeleeEnemy : MonoBehaviour
             }   
         }
         if (enemyPatrol!=null){
-            enemyPatrol.enabled = !PlayerInSight();
+                enemyPatrol.enabled = !PlayerInSight();
         }
     }
-    public void SetBossVulnerable(){
-        SetVulnerable(1f);
-    }
-    public void SetVulnerable(float duration)
-    {
-        isVulnerable = true;
-        sprite.color = Color.red; // flash red
-        Invoke(nameof(ClearVulnerability), duration);
-    }
-
-    private void ClearVulnerability()
-    {
-        sprite.color = originalColor; // reset if you want white base
-        isVulnerable = false;
-    }
-
     private bool HasOneAttack()
     {
         return enemyName =="Demon_Slime" || enemyName == "Frost_Guardian";

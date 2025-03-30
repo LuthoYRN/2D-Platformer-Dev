@@ -22,7 +22,7 @@ public class Health : MonoBehaviour
         anim = GetComponent<Animator>();
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         isPlayer = CompareTag("Player");
-        if (!isPlayer){enemy_bar.SetHealth(StartingHealth,startingHealth);       
+        if (!isPlayer){enemy_bar.SetHealth(StartingHealth,startingHealth);        Debug.Log(enemy_bar);
 }
     }
 
@@ -31,15 +31,6 @@ public class Health : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
         if (isPlayer){bar.fillAmount = bar.Map(currentHealth,0,startingHealth,0,1);}
         else{
-            if(GetComponent<EnemyTag>().GetEnemyName()=="Frost_Guardian" || GetComponent<EnemyTag>().GetEnemyName()=="Demon_Slime"){
-                MeleeEnemy boss = GetComponent<MeleeEnemy>();
-                if (boss != null && !boss.isVulnerable)
-                {
-                    Debug.Log("Boss is invulnerable!");
-                    currentHealth = Mathf.Clamp(currentHealth + _damage, 0, startingHealth);
-                    return;
-                }
-            }
             enemy_bar.SetHealth(currentHealth,startingHealth);
         }
         if (currentHealth > 0)
@@ -51,11 +42,7 @@ public class Health : MonoBehaviour
         {
             if (!dead)
             {
-                if(isPlayer){
-                    anim.SetBool("jump",false);
-                    anim.SetBool("fall",false);
-                }
-                anim.SetTrigger("die");              
+                anim.SetTrigger("die");
                 if (isPlayer)
                 {
                     //player
@@ -75,22 +62,6 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void Respawn(){
-        dead = false;
-        AddHealth((float)startingHealth/2);
-        anim.ResetTrigger("die");
-        anim.Play("idle");
-        WeaponWheelController.weaponID = 1;
-        if (GetComponent<PlayerMovement>()!=null)GetComponent<PlayerMovement>().enabled = true;
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach (GameObject enemy in enemies)
-        {       
-            if (enemy.activeInHierarchy){
-                Health enemyHealth = enemy.GetComponent<Health>();
-                enemyHealth.AddHealth(enemyHealth.startingHealth);
-            }
-        } 
-    }
     private void PlayDeathEffect()
     {
         string enemyName = GetComponent<EnemyTag>().GetEnemyName();
@@ -109,9 +80,6 @@ public class Health : MonoBehaviour
     }
     public void AddHealth(float _value){
         currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
-        if(isPlayer) {bar.fillAmount = bar.Map(currentHealth,0,startingHealth,0,1);}
-        else{
-            enemy_bar.SetHealth(_value,_value);
-        }
+        if(isPlayer) bar.fillAmount = bar.Map(currentHealth,0,startingHealth,0,1);
     }
 }
