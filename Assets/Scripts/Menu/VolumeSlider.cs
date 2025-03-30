@@ -14,9 +14,18 @@ public class VolumeSlider : MonoBehaviour
 
     private void SetVolume(float value)
     {
+        Debug.Log("Slider changed to: " + value);
         if (AudioManager.Instance != null)
         {
             AudioManager.Instance.UpdateVolume(value);
         }
     }
+
+
+    private void Update()
+    {
+        SetVolume(scrollbar.value);
+    }
+
+
 }

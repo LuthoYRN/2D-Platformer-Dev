@@ -56,7 +56,7 @@ public class AudioManager : MonoBehaviour
     private void ApplyVolume()
     {
         musicSource.volume = volume;
-        //sfxSource.volume = volume;
+        sfxSource.volume = volume;
     }
 
     public void PlaySFX(AudioClip clip)
@@ -66,15 +66,18 @@ public class AudioManager : MonoBehaviour
 
     public void UpdateVolume(float newVolume)
     {
-        Debug.Log("called");
+        Debug.Log("Volume updated to: " + newVolume);
         volume = newVolume;
         PlayerPrefs.SetFloat(VolumeKey, volume);
         PlayerPrefs.Save();
         ApplyVolume();
     }
 
+
     private void LoadVolume()
     {
         volume = PlayerPrefs.GetFloat(VolumeKey, 1f);
+        ApplyVolume(); // Make sure the loaded volume is applied immediately
     }
+
 }
