@@ -80,4 +80,15 @@ public class AudioManager : MonoBehaviour
         ApplyVolume(); // Make sure the loaded volume is applied immediately
     }
 
+    public void PauseMusic()
+    {
+        musicSource.Pause();
+    }
+
+    public void ResumeMusic()
+    {
+        musicSource.UnPause();
+    }
+
+
 }
