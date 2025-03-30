@@ -49,20 +49,28 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("run", Mathf.Abs(horizontalInput));
 
         // Fall detection (only trigger falling when moving downward)
-        if (body.linearVelocityY < -0.1f && !IsGrounded())
+        if (IsGrounded())
         {
-            anim.SetBool("fall", true);
             anim.SetBool("jump", false);
+            anim.SetBool("fall", false);
         }
         else if (body.linearVelocityY > 0.1f)
         {
             anim.SetBool("jump", true);
             anim.SetBool("fall", false);
-        }else if (IsGrounded())
-        {
-            anim.SetBool("fall",false);
-            anim.SetBool("jump",false);
         }
+        else if (body.linearVelocityY < -0.1f)
+        {
+            anim.SetBool("jump", false);
+            anim.SetBool("fall", true);
+        }
+        else
+        {
+            // At peak or hit ceiling
+            anim.SetBool("jump", false);
+            anim.SetBool("fall", true);
+        }
+
     }
 
     void FixedUpdate()
@@ -94,7 +102,20 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.CompareTag("End"))
         {
-            endLevel();
+            bool anyEnemyAlive = false;
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject enemy in enemies)
+            {       
+                if (enemy.activeInHierarchy)
+                    anyEnemyAlive = true;
+                    break;
+            }
+            if (anyEnemyAlive){
+                Debug.Log("Clear all enemies first!");
+            }
+            else{
+                endLevel();
+            }
         }
     }
 
@@ -103,5 +124,16 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("Finished level!!");
         map.SetActive(true);
+    }
+    public void Disable(){
+        enabled = false;
+        PlayerAttack playerAttack = this.gameObject.GetComponent<PlayerAttack>();
+        playerAttack.enabled = false;
+    }
+    public void Enable(){
+        enabled = true;
+        PlayerAttack playerAttack = this.gameObject.GetComponent<PlayerAttack>();
+        playerAttack.enabled = true;
+        
     }
 }

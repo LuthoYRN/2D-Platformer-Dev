@@ -31,6 +31,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip mushroom_range;
     public AudioClip demon_attack;
     public AudioClip demon_death;
+    public AudioClip checkpoint;
     private float volume = 1f;
     private const string VolumeKey = "Volume"; // Key for PlayerPrefs
 
@@ -47,19 +48,11 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-        LoadVolume();
-    }
-   
-  
-
-    private void Start()
-    {
         musicSource.clip = background;
         musicSource.Play();
         ApplyVolume();
+        LoadVolume();
     }
-
     private void ApplyVolume()
     {
         musicSource.volume = volume;
@@ -73,6 +66,7 @@ public class AudioManager : MonoBehaviour
 
     public void UpdateVolume(float newVolume)
     {
+        Debug.Log("called");
         volume = newVolume;
         PlayerPrefs.SetFloat(VolumeKey, volume);
         PlayerPrefs.Save();
