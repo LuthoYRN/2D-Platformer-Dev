@@ -233,6 +233,8 @@ MonoBehaviour:
   components:
   - {fileID: 2159373803425945531}
   - {fileID: 7274584012618849112}
+  - {fileID: 0}
+  - {fileID: 4595364128594232353}
 --- !u!114 &4613037608678844709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,5 +398,10 @@ MonoBehaviour:
 --- !u!224 &3834499217152008336 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7537647335958165565, guid: d16a631d4b3a8c54d996dcd4cfffdbba, type: 3}
+  m_PrefabInstance: {fileID: 6750327291042027693}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &4595364128594232353 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 7092036623776472204, guid: d16a631d4b3a8c54d996dcd4cfffdbba, type: 3}
   m_PrefabInstance: {fileID: 6750327291042027693}
   m_PrefabAsset: {fileID: 0}

@@ -5,7 +5,7 @@ public class VolumeSlider : MonoBehaviour
 {
     public Scrollbar scrollbar;
 
-    private void Start()
+    private void Awake()
     {
         float savedVolume = PlayerPrefs.GetFloat("Volume", 1f);
         scrollbar.value = savedVolume;

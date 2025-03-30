@@ -39,23 +39,23 @@ public class EnemyProjectile : MonoBehaviour
             {
                 case ProjectileType.GoblinBomb:
                     anim.SetTrigger("goblinBomb_hit");
-                    DamagePlayer(collision,15);
+                    DamagePlayer(collision,5);
                     break;
                 case ProjectileType.FlyingEyeAttack:
                     anim.SetTrigger("flyingAttack_hit");
-                    DamagePlayer(collision,10);
+                    DamagePlayer(collision,5);
                     break;
                 case ProjectileType.FireWormAttack:
                     anim.SetTrigger("fireWormAttack_hit");
-                    DamagePlayer(collision,20);
+                    DamagePlayer(collision,5);
                     break;
                 case ProjectileType.SwordAttack:
                     anim.SetTrigger("sword_hit");
-                    DamagePlayer(collision,20);
+                    DamagePlayer(collision,10);
                     break;
                 case ProjectileType.MushroomAttack:
                     anim.SetTrigger("mushroomAttack_hit");
-                    DamagePlayer(collision,10);
+                    DamagePlayer(collision,5);
                     break;
             }
         }
