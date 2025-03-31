@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -121,6 +122,10 @@ public class PlayerMovement : MonoBehaviour
     //When player reaches the end of the level, this needs to be called and the levelsCompleted needs to increase by 1
     public void endLevel()
     {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Disable();
+        PlayerPrefs.SetInt("LastCompletedLevel", SceneManager.GetActiveScene().buildIndex);
+        PlayerPrefs.Save();
+
         Debug.Log("Finished level!!");
         map.SetActive(true);
     }
