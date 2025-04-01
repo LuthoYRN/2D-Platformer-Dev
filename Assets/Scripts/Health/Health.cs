@@ -28,6 +28,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float _damage)
     {
+        if (dead) return;
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
         if (isPlayer){bar.fillAmount = bar.Map(currentHealth,0,startingHealth,0,1);}
         else{
@@ -54,13 +55,19 @@ public class Health : MonoBehaviour
                 if(isPlayer){
                     anim.SetBool("jump",false);
                     anim.SetBool("fall",false);
-                }
-                anim.SetTrigger("die");              
-                if (isPlayer)
-                {
-                    //player
+                    anim.ResetTrigger("hurt");
+                    anim.SetTrigger("die");
                     audioManager.PlaySFX(audioManager.death);
+                    Rigidbody2D rb = GetComponent<Rigidbody2D>();
+                    if (rb != null)
+                    {
+                        rb.linearVelocity = Vector2.zero;
+                        rb.bodyType = RigidbodyType2D.Static; 
+                    }
+                    if (TryGetComponent<PlayerMovement>(out var move)) move.enabled = false;
+                    if (TryGetComponent<PlayerAttack>(out var attack)) attack.enabled = false;
                 }else{
+                    anim.SetTrigger("die");
                     //enemy
                     foreach (Behaviour component in components)
                     {
@@ -80,7 +87,14 @@ public class Health : MonoBehaviour
         anim.ResetTrigger("die");
         anim.Play("idle");
         WeaponWheelController.weaponID = 1;
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            rb.linearVelocity = Vector2.zero;
+        }
         if (GetComponent<PlayerMovement>()!=null)GetComponent<PlayerMovement>().enabled = true;
+        if (TryGetComponent<PlayerAttack>(out var attack)) attack.enabled = true;
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject enemy in enemies)
         {       

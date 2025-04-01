@@ -14,8 +14,6 @@ public class Powerup : MonoBehaviour
 
     Animator anim = collision.GetComponent<Animator>();
     PlayerAttack attack = collision.GetComponent<PlayerAttack>();
-    collision.GetComponent<PlayerMovement>().enabled = false;
-
     audioManager.PlaySFX(audioManager.powerup);
 
     if (CompareTag("PowerUpF"))
@@ -35,6 +33,5 @@ public class Powerup : MonoBehaviour
     }
 
     gameObject.SetActive(false);
-    collision.GetComponent<PlayerMovement>().enabled = true;
 }
 }

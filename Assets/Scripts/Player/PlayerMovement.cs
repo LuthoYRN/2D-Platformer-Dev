@@ -137,7 +137,34 @@ public class PlayerMovement : MonoBehaviour
     public void Enable(){
         enabled = true;
         PlayerAttack playerAttack = this.gameObject.GetComponent<PlayerAttack>();
-        playerAttack.enabled = true;
+       playerAttack.enabled = true;
         
+    } 
+    public void EnableMovement()
+    {  
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            rb.linearVelocity = Vector2.zero;
+        }
+        if (GetComponent<PlayerMovement>()!=null)GetComponent<PlayerMovement>().enabled = true;
+        if (TryGetComponent<PlayerAttack>(out var attack)) attack.enabled = true;
+       
     }
+
+    public void DisableMovement()
+    {
+        GetComponent<PlayerMovement>().enabled = false;
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.bodyType = RigidbodyType2D.Static; 
+        }
+        if (TryGetComponent<PlayerMovement>(out var move)) move.enabled = false;
+        if (TryGetComponent<PlayerAttack>(out var attack)) attack.enabled = false;
+               
+    }
+
 }
