@@ -21,6 +21,9 @@ public class WeaponWheelController : MonoBehaviour
     {   
         instance = this;
         anim = GetComponent<Animator>();   
+        LoadUnlockedPowers();
+        weaponID = PlayerPrefs.GetInt("LastWeaponID", 1);
+        lastSelectedWeaponID = weaponID;
     }
     private void Update()
     {
@@ -42,20 +45,22 @@ public class WeaponWheelController : MonoBehaviour
         {
             case 1:            
                 player.GetComponent<Animator>().SetBool("power",false);
-                lastSelectedWeaponID = 1;
                 break;
             case 2:
                 player.GetComponent<Animator>().SetBool("power",true);
-                lastSelectedWeaponID = 2;
                 break;
             case 3:
                 player.GetComponent<Animator>().SetBool("power",true);
-                lastSelectedWeaponID = 3;
                 break;
             case 4:
                 player.GetComponent<Animator>().SetBool("power",true);
-                lastSelectedWeaponID = 4;
                 break;
+        }
+        if (weaponID != lastSelectedWeaponID)
+        {
+            lastSelectedWeaponID = weaponID;
+            PlayerPrefs.SetInt("LastWeaponID", weaponID);
+            PlayerPrefs.Save();
         }
         UpdateSelectedItem();
     }
@@ -89,4 +94,14 @@ public class WeaponWheelController : MonoBehaviour
             }
         }
     }
+
+    private void LoadUnlockedPowers()
+{
+    if (PlayerPrefs.GetInt("PowerUnlocked_F", 0) == 1)
+        UnlockButton("F");
+    if (PlayerPrefs.GetInt("PowerUnlocked_I", 0) == 1)
+        UnlockButton("I");
+    if (PlayerPrefs.GetInt("PowerUnlocked_G", 0) == 1)
+        UnlockButton("G");
+}
 }

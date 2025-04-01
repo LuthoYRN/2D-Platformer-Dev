@@ -120,6 +120,8 @@ public class PlayerAttack : MonoBehaviour
 
     public void UnlockAttack(string attackType){
         WeaponWheelController.instance.UnlockButton(attackType);
+        PlayerPrefs.SetInt("PowerUnlocked_" + attackType, 1);
+        PlayerPrefs.Save();
     }
     private void LevitateAttack()
     {
