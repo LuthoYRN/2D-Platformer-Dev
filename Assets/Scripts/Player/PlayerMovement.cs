@@ -123,11 +123,20 @@ public class PlayerMovement : MonoBehaviour
     public void endLevel()
     {
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Disable();
-        PlayerPrefs.SetInt("LastCompletedLevel", SceneManager.GetActiveScene().buildIndex);
-        PlayerPrefs.Save();
+        int currentActiveScene = SceneManager.GetActiveScene().buildIndex;
 
-        Debug.Log("Finished level!!");
-        map.SetActive(true);
+        if (currentActiveScene == 6) {
+            PlayerPrefs.SetInt("LastCompletedLevel", 0);
+            PlayerPrefs.Save();
+            Debug.Log("Loading main menu");
+            SceneManager.LoadScene("Menu");
+        } else
+        {
+            PlayerPrefs.SetInt("LastCompletedLevel", SceneManager.GetActiveScene().buildIndex);
+            PlayerPrefs.Save();
+            map.SetActive(true);
+        }
+      
     }
     public void Disable(){
         enabled = false;
