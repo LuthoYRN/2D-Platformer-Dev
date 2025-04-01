@@ -17,6 +17,12 @@ public class mainMenu : MonoBehaviour
         SceneManager.LoadScene(lastCompletedLevel + 1); //Make sure to update this to say +1 whenever a level is finished!!!!!!
     }
 
+    public void restartGame()
+    {
+        Debug.Log("Resarting game");
+        PlayerPrefs.SetInt("LastCompletedLevel", 0);
+        PlayerPrefs.Save();
+    }
     public void exitGame()
     {
         Debug.Log("Quit");
