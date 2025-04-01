@@ -8,15 +8,33 @@ public class Powerup : MonoBehaviour
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+   private void OnTriggerEnter2D(Collider2D collision)
+{
+    if (!collision.CompareTag("Player")) return;
+
+    Animator anim = collision.GetComponent<Animator>();
+    PlayerAttack attack = collision.GetComponent<PlayerAttack>();
+    collision.GetComponent<PlayerMovement>().enabled = false;
+
+    audioManager.PlaySFX(audioManager.powerup);
+
+    if (CompareTag("PowerUpF"))
     {
-        if (collision.CompareTag("Player"))
-        {
-            Animator anim = collision.gameObject.GetComponent<Animator>();
-            anim.SetTrigger("powerup");
-            audioManager.PlaySFX(audioManager.powerup);
-            collision.gameObject.GetComponent<PlayerAttack>().UnlockAttack("F");
-            gameObject.SetActive(false);
-        }
+        anim.SetTrigger("fire_up");
+        attack.UnlockAttack("F");
     }
+    else if (CompareTag("PowerUpG"))
+    {
+        anim.SetTrigger("levitate_up");
+        attack.UnlockAttack("G");
+    }
+    else if (CompareTag("PowerUpI"))
+    {
+        anim.SetTrigger("ice_up");
+        attack.UnlockAttack("I");
+    }
+
+    gameObject.SetActive(false);
+    collision.GetComponent<PlayerMovement>().enabled = true;
+}
 }

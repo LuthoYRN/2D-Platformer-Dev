@@ -1,0 +1,37 @@
+damages health
+
+lvl 1 - 9 enemies
+
+-goblin melee5 health100
+-flying eye melee5 health70
+-mushroom melee5 health50
+
+lvl 2 - 9 enemies
+
+-goblin meele8 health120
+-flying eye meele6 health90
+-mushroom meele7 health 80
+
+lvl 3 - 13 enemies
+
+-goblin meele9 health140
+-flying eye meele7 health100
+-mushroom meele8 health90
+-skeleton meele10 health140
+-fire worm health160
+
+lvl 4 - low cooldown - 13 enemies
+
+-goblin meele9 health140
+-flying eye meele7 health100
+-mushroom meele8 health90
+-skeleton meele10 health140
+-fire worm health160
+
+lvl 5-up movement speed
+
+-goblin meele health
+-flying eye meele health
+-mushroom meele health
+-skeleton meele health
+-fire worm health

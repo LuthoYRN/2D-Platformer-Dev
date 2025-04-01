@@ -60,7 +60,6 @@ public class Health : MonoBehaviour
                 {
                     //player
                     audioManager.PlaySFX(audioManager.death);
-                    if (GetComponent<PlayerMovement>()!=null)GetComponent<PlayerMovement>().enabled = false; 
                 }else{
                     //enemy
                     foreach (Behaviour component in components)

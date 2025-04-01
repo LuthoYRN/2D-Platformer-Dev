@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Ground
   - Enemy
-  - PowerUp
   - IceAttack
   - ArrowAttack
   - FireAttack
@@ -19,6 +18,9 @@ TagManager:
   - Start
   - End
   - checkpoint
+  - PowerUpF
+  - PowerUpI
+  - PowerUpG
   layers:
   - Default
   - TransparentFX
