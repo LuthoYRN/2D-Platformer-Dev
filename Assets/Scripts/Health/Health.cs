@@ -13,14 +13,12 @@ public class Health : MonoBehaviour
     private bool dead;
     [Header("Components")]
     [SerializeField] private Behaviour[] components;
-    private AudioManager audioManager;
     private bool isPlayer;
 
     private void Awake()
     {
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         isPlayer = CompareTag("Player");
         if (!isPlayer){enemy_bar.SetHealth(StartingHealth,startingHealth);       
 }
@@ -46,7 +44,7 @@ public class Health : MonoBehaviour
         if (currentHealth > 0)
         {
             anim.SetTrigger("hurt");
-            if (isPlayer) audioManager.PlaySFX(audioManager.take_damage);
+            if (isPlayer) AudioManager.Instance.PlaySFX(AudioManager.Instance.take_damage);
         }
         else
         {
@@ -57,7 +55,7 @@ public class Health : MonoBehaviour
                     anim.SetBool("fall",false);
                     anim.ResetTrigger("hurt");
                     anim.SetTrigger("die");
-                    audioManager.PlaySFX(audioManager.death);
+                    AudioManager.Instance.PlaySFX(AudioManager.Instance.death);
                     Rigidbody2D rb = GetComponent<Rigidbody2D>();
                     if (rb != null)
                     {
@@ -109,12 +107,12 @@ public class Health : MonoBehaviour
         string enemyName = GetComponent<EnemyTag>().GetEnemyName();
         switch (enemyName)
         {
-            case "Skeleton": audioManager.PlaySFX(audioManager.skeleton_death);break;
-            case "Goblin": audioManager.PlaySFX(audioManager.goblin_death);break;            
-            case "FlyingEye": audioManager.PlaySFX(audioManager.goblin_death);break;
-            case "Mushroom": audioManager.PlaySFX(audioManager.goblin_death);break;            
-            case "Demon_Slime": audioManager.PlaySFX(audioManager.demon_death);break;
-            case "Frost_Guardian": audioManager.PlaySFX(audioManager.demon_death);break;
+            case "Skeleton": AudioManager.Instance.PlaySFX(AudioManager.Instance.skeleton_death);break;
+            case "Goblin": AudioManager.Instance.PlaySFX(AudioManager.Instance.goblin_death);break;            
+            case "FlyingEye": AudioManager.Instance.PlaySFX(AudioManager.Instance.goblin_death);break;
+            case "Mushroom": AudioManager.Instance.PlaySFX(AudioManager.Instance.goblin_death);break;            
+            case "Demon_Slime": AudioManager.Instance.PlaySFX(AudioManager.Instance.demon_death);break;
+            case "Frost_Guardian": AudioManager.Instance.PlaySFX(AudioManager.Instance.demon_death);break;
         }
     }
     public void Deactivate(){

@@ -10,12 +10,10 @@ public class PlayerProjectile : MonoBehaviour
     private float lifetime;
     public enum ProjectileType { Arrow, Fire, Ice }
     private ProjectileType projectileType;
-    private AudioManager audioManager;
     private void Awake()
     {
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D> ();
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -83,7 +81,7 @@ public class PlayerProjectile : MonoBehaviour
     private void Explosion(){
         if (gameObject.CompareTag("FireAttack"))
         {
-            audioManager.PlaySFX(audioManager.fire_explosion);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.fire_explosion);
         }
     }
     private void Deactivate(){
