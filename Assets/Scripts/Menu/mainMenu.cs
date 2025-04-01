@@ -21,7 +21,13 @@ public class mainMenu : MonoBehaviour
     {
         Debug.Log("Resarting game");
         PlayerPrefs.SetInt("LastCompletedLevel", 0);
+        PlayerPrefs.DeleteKey("PowerUnlocked_F");
+        PlayerPrefs.DeleteKey("PowerUnlocked_I");
+        PlayerPrefs.DeleteKey("PowerUnlocked_G");
+        PlayerPrefs.SetInt("LastWeaponID", 1);
+
         PlayerPrefs.Save();
+        playGame();
     }
     public void exitGame()
     {
