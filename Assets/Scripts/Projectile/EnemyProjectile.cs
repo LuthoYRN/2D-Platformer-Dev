@@ -10,12 +10,10 @@ public class EnemyProjectile : MonoBehaviour
     private float lifetime;
     public enum ProjectileType { SwordAttack, FireWormAttack, GoblinBomb,MushroomAttack,FlyingEyeAttack}
     private ProjectileType projectileType;
-    private AudioManager audioManager;
     private void Awake()
     {
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D> ();
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Update()
@@ -73,19 +71,19 @@ public class EnemyProjectile : MonoBehaviour
         }
         else if(gameObject.CompareTag("MushroomAttack")){
             projectileType = ProjectileType.MushroomAttack;
-            audioManager.PlaySFX(audioManager.mushroom_range);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.mushroom_range);
         }
         else if(gameObject.CompareTag("FlyingEyeAttack")){
             projectileType = ProjectileType.FlyingEyeAttack;
-            audioManager.PlaySFX(audioManager.flying_eye_range);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.flying_eye_range);
         }
         else if(gameObject.CompareTag("FireWormAttack")){
             projectileType = ProjectileType.FireWormAttack;
-            audioManager.PlaySFX(audioManager.fire);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.fire);
         }
         else if(gameObject.CompareTag("GoblinBomb")){
             projectileType = ProjectileType.GoblinBomb;
-            audioManager.PlaySFX(audioManager.goblin_bomb);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.goblin_bomb);
         }
 
         hit = false;
@@ -101,9 +99,9 @@ public class EnemyProjectile : MonoBehaviour
     private void Explosion(){
         if (gameObject.CompareTag("FireWormAttack") || gameObject.CompareTag("GoblinBomb") || gameObject.CompareTag("MushroomAttack"))
         {
-            audioManager.PlaySFX(audioManager.fire_explosion);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.fire_explosion);
         }else if (gameObject.CompareTag("SwordAttack")){
-            audioManager.PlaySFX(audioManager.sword_ranged_attack);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.sword_ranged_attack);
         }
     }
     private void Deactivate(){

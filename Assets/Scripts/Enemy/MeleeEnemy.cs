@@ -19,7 +19,6 @@ public class MeleeEnemy : MonoBehaviour
     private Animator anim;
     private Health playerHealth;
     private EnemyPatrol enemyPatrol;
-    private AudioManager audioManager;
     private string enemyName;
     public bool isVulnerable { get; private set; }
     private SpriteRenderer sprite;
@@ -28,7 +27,6 @@ public class MeleeEnemy : MonoBehaviour
     private void Awake(){
         anim = GetComponent<Animator>();
         enemyPatrol = GetComponentInParent<EnemyPatrol>();
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         enemyName = GetComponent<EnemyTag>().GetEnemyName();
         sprite = GetComponent<SpriteRenderer>();
         originalColor = sprite.color;
@@ -104,30 +102,30 @@ public class MeleeEnemy : MonoBehaviour
         {
             switch (attack)
             {
-                case 0: audioManager.PlaySFX(audioManager.sword_attack1);break;
-                case 1: audioManager.PlaySFX(audioManager.sword_attack2);break;
+                case 0: AudioManager.Instance.PlaySFX(AudioManager.Instance.sword_attack1);break;
+                case 1: AudioManager.Instance.PlaySFX(AudioManager.Instance.sword_attack2);break;
             }   
         }else if (enemyName=="Goblin"){
             switch (attack)
             {
-                case 0: audioManager.PlaySFX(audioManager.sword_attack2);break;
-                case 1: audioManager.PlaySFX(audioManager.goblin_attack2);break;
+                case 0: AudioManager.Instance.PlaySFX(AudioManager.Instance.sword_attack2);break;
+                case 1: AudioManager.Instance.PlaySFX(AudioManager.Instance.goblin_attack2);break;
             }
         }
         else if (enemyName=="FlyingEye"){
             switch (attack)
             {
-                case 0: audioManager.PlaySFX(audioManager.goblin_attack2);break;
-                case 1: audioManager.PlaySFX(audioManager.sword_attack2);break;
+                case 0: AudioManager.Instance.PlaySFX(AudioManager.Instance.goblin_attack2);break;
+                case 1: AudioManager.Instance.PlaySFX(AudioManager.Instance.sword_attack2);break;
             }
         }
         else if (enemyName=="Mushroom"){
-            audioManager.PlaySFX(audioManager.goblin_attack1);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.goblin_attack1);
         }
         else if (enemyName=="Demon_Slime"){
-            audioManager.PlaySFX(audioManager.demon_attack);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.demon_attack);
         }else if (enemyName =="Frost_Guardian"){
-            audioManager.PlaySFX(audioManager.demon_attack);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.demon_attack);
         }
     }
 }

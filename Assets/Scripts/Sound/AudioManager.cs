@@ -60,6 +60,12 @@ public class AudioManager : MonoBehaviour
         musicSource.volume = volume;
         sfxSource.volume = volume;
     }
+    public void ChangeMusic(AudioClip newMusic)
+    {
+        if (musicSource.clip == newMusic) return;
+        musicSource.clip = newMusic;
+        musicSource.Play();
+    }
 
     public void PlaySFX(AudioClip clip)
     {

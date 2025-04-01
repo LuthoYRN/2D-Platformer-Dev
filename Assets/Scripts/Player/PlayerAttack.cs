@@ -20,8 +20,6 @@ public class PlayerAttack : MonoBehaviour
     
     [Header("Enemy Layer")]
     [SerializeField] private LayerMask enemyLayer;
-    AudioManager audioManager;
-
     private PlayerMovement playerMovement;
     private Animator anim;
     private float cooldownTimer = Mathf.Infinity;
@@ -32,7 +30,6 @@ public class PlayerAttack : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Update()
@@ -56,17 +53,17 @@ public class PlayerAttack : MonoBehaviour
             case 1:
                 animTrigger = "arrow_attack";
                 selectedPool = arrows;
-                audioManager.PlaySFX(audioManager.arrow);
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.arrow);
                 break;
             case 2:
                 animTrigger = "fire_attack";
                 selectedPool = fireSpells;
-                audioManager.PlaySFX(audioManager.fire);
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.fire);
                 break;
             case 3:
                 animTrigger = "ice_attack";
                 selectedPool = iceSpells;
-                audioManager.PlaySFX(audioManager.ice);
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.ice);
                 break;
             case 4:
                 if (levitationCooldownTimer > levitationAttackCooldown){
@@ -158,7 +155,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (hit.collider != null && hit.collider.CompareTag("Enemy"))
         {
-            audioManager.PlaySFX(audioManager.gravity);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.gravity);
             GameObject enemy = hit.collider.gameObject;
             StartCoroutine(FakeLevitate(enemy)); 
         }
