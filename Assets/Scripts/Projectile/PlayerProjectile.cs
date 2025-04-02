@@ -52,7 +52,16 @@ public class PlayerProjectile : MonoBehaviour
         }
     }
     private void DamageEnemy(Collider2D collision,int _damage){
-        if(collision.CompareTag("Enemy"))collision.GetComponent<Health>().TakeDamage(_damage);
+        if(collision.CompareTag("Enemy")){
+            if(collision.GetComponent<EnemyTag>().GetEnemyName()=="King"){
+                collision.GetComponent<BossAI>().TakeDamage(_damage);
+            }else if(collision.GetComponent<EnemyTag>().GetEnemyName()=="Phoenix"){
+                collision.GetComponent<PhoenixController>().TakeDamage(_damage);
+            }
+            else{
+                collision.GetComponent<Health>().TakeDamage(_damage);
+            }
+        }
     }
     public void SetDirection(float _direction)
     {

@@ -32,6 +32,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip demon_attack;
     public AudioClip demon_death;
     public AudioClip checkpoint;
+    public AudioClip fsx1, fsx2;
     private float volume = 1f;
     private const string VolumeKey = "Volume"; // Key for PlayerPrefs
 
