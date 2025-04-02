@@ -98,7 +98,11 @@ public class Health : MonoBehaviour
         {       
             if (enemy.activeInHierarchy){
                 Health enemyHealth = enemy.GetComponent<Health>();
-                enemyHealth.AddHealth(enemyHealth.startingHealth);
+                if (enemyHealth != null){
+                    enemyHealth.AddHealth(enemyHealth.startingHealth);
+                }else{
+                    enemy.GetComponent<BossAI>().incHP(); //boss
+                }
             }
         } 
     }

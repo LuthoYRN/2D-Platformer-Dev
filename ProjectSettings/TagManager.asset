@@ -21,6 +21,8 @@ TagManager:
   - PowerUpF
   - PowerUpI
   - PowerUpG
+  - Projectile
+  - PowerUp
   layers:
   - Default
   - TransparentFX
@@ -32,7 +34,7 @@ TagManager:
   - Enemy
   - Ground
   - Map
-  - 
+  - King
   - 
   - 
   - 

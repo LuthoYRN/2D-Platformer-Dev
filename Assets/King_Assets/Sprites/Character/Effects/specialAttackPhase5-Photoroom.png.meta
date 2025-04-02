@@ -1,0 +1,520 @@
+fileFormatVersion: 2
+guid: f1990b3e83cbabe4d882bc1cad4678fe
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -916527044074951522
+    second: specialAttackPhase5-Photoroom_0
+  - first:
+      213: 9038651611539623229
+    second: specialAttackPhase5-Photoroom_1
+  - first:
+      213: 4731077645141375561
+    second: specialAttackPhase5-Photoroom_2
+  - first:
+      213: -4850423022783614986
+    second: specialAttackPhase5-Photoroom_3
+  - first:
+      213: -5112138116727444992
+    second: specialAttackPhase5-Photoroom_4
+  - first:
+      213: 5853381752446625127
+    second: specialAttackPhase5-Photoroom_5
+  - first:
+      213: -8083955886254290150
+    second: specialAttackPhase5-Photoroom_6
+  - first:
+      213: -692732574842584962
+    second: specialAttackPhase5-Photoroom_7
+  - first:
+      213: 7094875307629498013
+    second: specialAttackPhase5-Photoroom_8
+  - first:
+      213: 8819333927368210761
+    second: specialAttackPhase5-Photoroom_9
+  - first:
+      213: -7681352767363795398
+    second: specialAttackPhase5-Photoroom_10
+  - first:
+      213: -7776823645167706291
+    second: specialAttackPhase5-Photoroom_11
+  - first:
+      213: 8832656578593422637
+    second: specialAttackPhase5-Photoroom_12
+  - first:
+      213: 130347397575955810
+    second: specialAttackPhase5-Photoroom_13
+  - first:
+      213: 2601435377120171176
+    second: specialAttackPhase5-Photoroom_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: specialAttackPhase5-Photoroom_0
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 502
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9cafd66287d743f0800000000000000
+      internalID: -916527044074951522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: specialAttackPhase5-Photoroom_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 486
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3dc45a70cdbf6d70800000000000000
+      internalID: 9038651611539623229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: specialAttackPhase5-Photoroom_2
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 495
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94a717b4d0a28a140800000000000000
+      internalID: 4731077645141375561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: specialAttackPhase5-Photoroom_3
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 486
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ff2b9c95f5dfacb0800000000000000
+      internalID: -4850423022783614986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: specialAttackPhase5-Photoroom_4
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 457
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00ae9b5d7790e09b0800000000000000
+      internalID: -5112138116727444992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: specialAttackPhase5-Photoroom_5
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 460
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 765a559f0b36b3150800000000000000
+      internalID: 5853381752446625127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: specialAttackPhase5-Photoroom_6
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 290
+        width: 686
+        height: 156
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1b82ebb3f400df80800000000000000
+      internalID: -8083955886254290150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: specialAttackPhase5-Photoroom_7
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 411
+        width: 71
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e708a28b46be266f0800000000000000
+      internalID: -692732574842584962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: specialAttackPhase5-Photoroom_8
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 289
+        width: 43
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9e42f4808f067260800000000000000
+      internalID: 7094875307629498013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: specialAttackPhase5-Photoroom_9
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 263
+        width: 81
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9493558ea71946a70800000000000000
+      internalID: 8819333927368210761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: specialAttackPhase5-Photoroom_10
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 275
+        width: 56
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3631da0b5a566590800000000000000
+      internalID: -7681352767363795398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: specialAttackPhase5-Photoroom_11
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 222
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4f9bec191c231490800000000000000
+      internalID: -7776823645167706291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: specialAttackPhase5-Photoroom_12
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 205
+        width: 21
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2df31e5c56e39a70800000000000000
+      internalID: 8832656578593422637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: specialAttackPhase5-Photoroom_13
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 204
+        width: 44
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26559e974461fc100800000000000000
+      internalID: 130347397575955810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: specialAttackPhase5-Photoroom_14
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 186
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a4d16741b72a1420800000000000000
+      internalID: 2601435377120171176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e24395b951913934e9812e43d7645428
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      specialAttackPhase5-Photoroom_0: -916527044074951522
+      specialAttackPhase5-Photoroom_1: 9038651611539623229
+      specialAttackPhase5-Photoroom_10: -7681352767363795398
+      specialAttackPhase5-Photoroom_11: -7776823645167706291
+      specialAttackPhase5-Photoroom_12: 8832656578593422637
+      specialAttackPhase5-Photoroom_13: 130347397575955810
+      specialAttackPhase5-Photoroom_14: 2601435377120171176
+      specialAttackPhase5-Photoroom_2: 4731077645141375561
+      specialAttackPhase5-Photoroom_3: -4850423022783614986
+      specialAttackPhase5-Photoroom_4: -5112138116727444992
+      specialAttackPhase5-Photoroom_5: 5853381752446625127
+      specialAttackPhase5-Photoroom_6: -8083955886254290150
+      specialAttackPhase5-Photoroom_7: -692732574842584962
+      specialAttackPhase5-Photoroom_8: 7094875307629498013
+      specialAttackPhase5-Photoroom_9: 8819333927368210761
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
